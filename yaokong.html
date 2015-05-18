@@ -1,0 +1,170 @@
+<!Doctype Html>
+<html>
+<head>
+        <title>TV Remote Control</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<!--<link href="http://1.lixiaopengtest.sinaapp.com/css/style3.css" rel="stylesheet" type="text/css" />-->
+<style  type="text/css">
+    body{
+        background-color:#000;
+    }
+#big {
+            margin: 0 auto;
+			width:350px;
+        }
+form{margin-bottom: 0;}
+</style>
+    
+<script type="text/javascript">
+   
+             var XMLHttpRequest;
+             sessionStorage.deviceid="<?php echo $deviceid;?>";
+            
+  	
+ 			 var device=sessionStorage.deviceid;
+             function createXMLHttpRequest() { //建立XMLHttpRequest对象
+                        var ajax = null;
+			 try {
+				 ajax=new XMLHttpRequest();
+			 } catch (e) {
+				 try {
+				 ajax=new ActiveXObject("Msxml2.XMLHTTP");
+				 } catch (e) {
+					 ajax=new ActiveXObject("Microsoft.XMLHTTP");
+				 }
+			 }
+			 return ajax;
+        }
+		
+        function send1() {
+			
+			
+           
+            XMLHttpRequest = createXMLHttpRequest(); //获得XMLHttpRequest对象
+            XMLHttpRequest.onreadystatechange=stateChanged;  //ajax返回后的回调函数
+            XMLHttpRequest.open("GET", "http://lixiaopengtest.sinaapp.com/index.php/?MWID="+device+"&deviceType=tv&command=on", false); //get方式发送  建议第二个参数为true 异步方式！ 
+            XMLHttpRequest.send(null); 
+        } 
+              function send2() {
+			sessionStorage.openid="<?php echo $openid;?>";
+			 sessionStorage.deviceid="<?php echo $deviceid;?>";
+            sessionStorage.DID="<?php echo $DID;?>";
+            sessionStorage.devicetype="<?php echo $devicetype;?>";
+			 var open=sessionStorage.openid;
+ 			 var device=sessionStorage.deviceid;
+            var DID=sessionStorage.DID;
+             XMLHttpRequest = createXMLHttpRequest(); //获得XMLHttpRequest对象
+            XMLHttpRequest.onreadystatechange=stateChanged;  //ajax返回后的回调函数
+            XMLHttpRequest.open("GET", "http://lixiaopengtest.sinaapp.com/index.php/?MWID="+device+"&deviceType=tv&command=up", false); //get方式发送  建议第二个参数为true 异步方式！ 
+            XMLHttpRequest.send(null); 
+        } 
+              function send3() {
+			sessionStorage.openid="<?php echo $openid;?>";
+			 sessionStorage.deviceid="<?php echo $deviceid;?>";
+            sessionStorage.DID="<?php echo $DID;?>";
+            sessionStorage.devicetype="<?php echo $devicetype;?>";
+			 var open=sessionStorage.openid;
+ 			 var device=sessionStorage.deviceid;
+            var DID=sessionStorage.DID;
+             XMLHttpRequest = createXMLHttpRequest(); //获得XMLHttpRequest对象
+            XMLHttpRequest.onreadystatechange=stateChanged;  //ajax返回后的回调函数
+            XMLHttpRequest.open("GET", "http://lixiaopengtest.sinaapp.com/index.php/?MWID="+device+"&deviceType=tv&command=left", false); //get方式发送  建议第二个参数为true 异步方式！ 
+            XMLHttpRequest.send(null); 
+        } 
+              function send4() {
+			sessionStorage.openid="<?php echo $openid;?>";
+			 sessionStorage.deviceid="<?php echo $deviceid;?>";
+            sessionStorage.DID="<?php echo $DID;?>";
+            sessionStorage.devicetype="<?php echo $devicetype;?>";
+			 var open=sessionStorage.openid;
+ 			 var device=sessionStorage.deviceid;
+            var DID=sessionStorage.DID;
+             XMLHttpRequest = createXMLHttpRequest(); //获得XMLHttpRequest对象
+            XMLHttpRequest.onreadystatechange=stateChanged;  //ajax返回后的回调函数
+            XMLHttpRequest.open("GET", "http://lixiaopengtest.sinaapp.com/index.php/?MWID="+device+"&deviceType=tv&command=right", false); //get方式发送  建议第二个参数为true 异步方式！ 
+            XMLHttpRequest.send(null); 
+        } 
+              function send5() {
+			sessionStorage.openid="<?php echo $openid;?>";
+			 sessionStorage.deviceid="<?php echo $deviceid;?>";
+            sessionStorage.DID="<?php echo $DID;?>";
+            sessionStorage.devicetype="<?php echo $devicetype;?>";
+			 var open=sessionStorage.openid;
+ 			 var device=sessionStorage.deviceid;
+            var DID=sessionStorage.DID;
+             XMLHttpRequest = createXMLHttpRequest(); //获得XMLHttpRequest对象
+            XMLHttpRequest.onreadystatechange=stateChanged;  //ajax返回后的回调函数
+            XMLHttpRequest.open("GET", "http://lixiaopengtest.sinaapp.com/index.php/?MWID="+device+"&deviceType=tv&command=down", false); //get方式发送  建议第二个参数为true 异步方式！ 
+            XMLHttpRequest.send(null); 
+        } 
+  //回调函数    
+        function stateChanged() { 
+			 if (XMLHttpRequest.readyState === 4 || XMLHttpRequest.status === 200) {	  
+	            var display ="deviceID="+device; //服务端返回值
+                location.search= "?"+display;
+        	} 
+        }
+  
+</script>
+
+</head>
+<body> 
+    
+    
+<iframe id="id_iframe" name="id_iframe" style="display:none;"></iframe>   
+<form id="formid1"   target="id_iframe">
+<input type="image" src="imagessrc/mute.png" alt="Submit" onclick="send1()"/>
+</form>
+
+<div id="big">
+
+<div style="text-align:center">
+ 
+<form id="formid2" target="id_iframe" >
+<input type="image" name="top" src="imagessrc/top1.png" alt="" onclick="send2()"/>
+</form>
+</div>
+
+<div style="width:350px;">
+<form id="formid3" target="id_iframe" style="float:left" >
+<input type="image" name="left" src="imagessrc/left1.png" alt="Submit" onclick="send3()"/>
+</form>
+<form id="formid4" target="id_iframe" style="float:right;">
+<input type="image" name="right" src="imagessrc/right1.png" alt="Submit" onclick="send4()"/>
+</form>
+</div>
+
+<div style="text-align:center;clear:both;">
+<form id="formid5" target="id_iframe">
+<input type="image" name="bottom" src="imagessrc/bottom1.png" alt="Submit" onclick="send5()"/>
+</form>
+</div>
+
+</div>   
+
+    
+<!--<div id="big">
+<form>
+<input class="power" type="image"  src="imagessrc/mute.png"/>
+<input class="silence" type="image"  src="imagessrc/silence1.png"/>
+<input class="top" type="image" name="top" src="imagessrc/top1.png"/>
+<input class="left" type="image" name="left" src="imagessrc/left1.png"/>
+<input class="right" type="image" name="right" src="imagessrc/right1.png"/>
+<input class="bottom" type="image" name="bottom" src="imagessrc/bottom1.png"/>
+<input class="middle" type="image" src="imagessrc/menu1.png"/>
+<input class="pdmiddle" type="image"  src="imagessrc/pindao.png"/>
+<input class="pdtop" type="image"  src="imagessrc/cir_top1.png"/>
+<input class="pd" type="image"  src="imagessrc/cir_bottom1.png"/>
+<input class="volumemiddle" type="image"  src="imagessrc/shengyin.png"/>
+<input class="volumetop" type="image"  src="imagessrc/cir_top1.png"/>
+<input class="volume" type="image"  src="imagessrc/cir_bottom1.png"/>
+<input class="source" type="image"  src="images/tv_cia_btn1.png" value="信号源"/>
+<input class="menu" type="image"  src="images/tv_cia_btn1.png"/>
+<input class="net" type="image"  src="images/tv_cia_btn1.png"/>
+<input class="quit" type="image"  src="images/tv_cia_btn1.png"/>
+<input class="quit" type="image"  src="images/tv_cia_btn1.png"/>
+</form>
+</div>-->
+</body>
+
+</html>

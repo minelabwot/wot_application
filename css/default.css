@@ -1,0 +1,63 @@
+*{padding:0; margin:0; border:0; font-family:"微软雅黑";}
+/* ------ mobilyblocks
+-----------------------------------------------*/
+
+.nature {
+display:block;
+width:120px;
+height:120px;
+text-align:center;
+line-height:120px;
+color:#FF0;
+text-shadow:1px 1px 1px rgba(0,0,0,0.3);
+cursor:pointer;
+position:relative;
+-moz-border-radius:50%;
+-ms-border-radius:50%;
+-webkit-border-radius:50%;
+border-radius:50%;
+margin:0 auto;
+background:  -webkit-linear-gradient(#F90, #F93); /* 标准的语法 */
+box-shadow:2px 3px 8px #999;
+font-size:12px;
+z-index:1
+}
+
+
+ul.reset,
+ul.reset li {
+display:block;
+list-style:none;
+padding:0;
+margin:0;
+}
+
+ul.reset li {
+position:absolute;
+border-radius:50%;
+width:100px;
+height:100px;
+text-align:center;
+line-height:100px;;
+background: -webkit-linear-gradient(#F7F7F7, #DBDBDB); /* 标准的语法 */
+box-shadow:1px 1px 8px #999;
+font-size:13px;
+z-index:1
+}
+
+ul.reset li a {
+outline:none;
+text-shadow:none;
+}
+
+#content {
+margin:180px auto 0;
+width:260px;
+}
+
+
+a {
+color:#F60; text-decoration:none;
+}
+
+

@@ -1,0 +1,54 @@
+<!Doctype Html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <title>pindao</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<style> 
+#tbxKeyword{ 
+     width:200px;
+     padding-left:25px;
+     height:30px;
+     font-size:14px; 
+     line-height:30px;
+     border:2px #008fcb solid;
+     background:url(http://1.lixiaopengtest.sinaapp.com/imagessrc/bk.gif) no-repeat;
+        background-color:#fff;
+ }
+ body{
+    background-color:#000;
+	text-align:center;
+	 }   
+</style>
+<script type="text/javascript" src="http://1.lixiaopengtest.sinaapp.com/js/jquery.min.js"></script>
+
+</head>
+<body>
+<input type="text" id="tbxKeyword" name="tbxKeyword" rel='search' class="input" value="" />
+
+</body>
+</html>
+<script type="text/javascript">
+function chkCss(){	
+	$("input[rel='search']").each(function(){
+											  setCss($(this));
+											  $(this).focus(function(){
+											      clearCss($(this));
+											  });
+											  $(this).focus(function(){
+											      setCss($(this));
+											  });
+	});	
+}
+ 
+function setCss(obj){
+			if(obj.val() != "")	clearCss(obj);
+			else fillCss(obj);
+} 
+function clearCss(obj){
+		obj.css("background-position","0px -35px");
+}
+function fillCss(obj){
+		obj.css("background-position","0px -5px");
+}
+setTimeout(function(){chkCss();},100);
+</script>

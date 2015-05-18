@@ -1,0 +1,125 @@
+body{
+   background-color:#000;
+   }
+   
+h1{
+text-align:center;
+color:#fff;
+}
+
+#big {
+            margin: 0 auto;
+        }
+form{margin-bottom: 0;}
+
+.power{
+      position:absolute;
+	  top:60px;
+	  left:0;
+	  }
+
+.top{
+      position:absolute;
+	  top:120px;
+	  left:612px;
+	  }
+.left{
+      position:absolute;
+	  top:195px;
+	  left:538px;
+	  }
+.right{
+      position:absolute;
+	  top:195px;
+	  left:730px;
+	  }
+.bottom{
+      position:absolute;
+	  top:314px;
+	  left:612px;
+	  }
+.middle{
+      position:absolute;
+	  top:202px;
+	  left:620px;
+	  }
+.silence{
+      position:absolute;
+	  top:60px;
+	  right:0;
+	  }
+	  
+.pdtop{
+      position:absolute;
+	  top:180px;
+	  left:200px;
+	  }
+.pd{
+      position:absolute;
+	  top:370px;
+	  left:200px;
+	  }
+.pdmiddle{
+      position:absolute;
+	  top:190px;
+	  left:200px;
+	  }
+.volumetop{
+      position:absolute;
+	  top:180px;
+	  right:200px;
+	  }
+.volume{
+      position:absolute;
+	  top:370px;
+	  right:200px;
+	  }
+.volumemiddle{
+      position:absolute;
+	  top:190px;
+	  right:200px;
+	  }
+.source{
+      position:absolute;
+	  top:500px;
+	  left:200px;
+	  }
+.menu{
+      position:absolute;
+	  top:500px;
+	  left:500px;
+	  }
+.net{
+      position:absolute;
+	  top:500px;
+	  right:500px;
+	  }
+.quit{
+      position:absolute;
+	  top:500px;
+	  right:200px;
+	  }
+	  
+	  
+@charset "utf-8"; 
+/* DIVCSS5-CSS初始化模板-www.divcss5.com */ 
+body, div, ul, li{margin:0; padding:0;font-style: normal;font:12px/22px "\5B8B\4F53",Arial, Helvetica, sans-serif} 
+/* \5B8B\4F53 代表 宋体，更多中文字体转 Unicode http://www.divcss5.com/jiqiao/j325.shtml */ 
+ol, ul ,li{list-style:none} 
+img {border: 0; vertical-align:middle} 
+body{color:#000000;background:#FFF; text-align:center} 
+.clear{clear:both;height:1px;width:100%; overflow:hidden; margin-top:-1px} 
+a{color:#000000;text-decoration:none}  
+a:hover{color:#BA2636} 
+ 
+.red ,.red a{ color:#F00} 
+.lan ,.lan a{ color:#1E51A2} 
+.pd5{ padding-top:5px} 
+.dis{display:block} 
+.undis{display:none} 
+ 
+ul#nav{ width:100%; height:60px; background:#00A2CA;margin:0 auto} 
+ul#nav li{display:inline; height:60px} 
+ul#nav li a{display:inline-block; padding:0 2px; height:60px; line-height:60px; 
+color:#FFF; font-family:"\5FAE\8F6F\96C5\9ED1"; font-size:16px} 
+ul#nav li a:hover{background:#0095BB} 

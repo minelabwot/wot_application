@@ -1,0 +1,53 @@
+1，WoT平台接口调用有两种方式：get，post。具体的函数写在 post.php 里
+2，两个应用实例：
+  2.1，获取设备列表
+  MWID="1234567890abcd01";
+  $deviceListUrl="http://www.cloudsensing.cn:9071/WIFPa/GatewayGWDevicelist.xml/"."$MWID"."?lang=zh"; //WoT接口
+  $deviceListXml=https_request($deviceListUrl);
+  function https_request($url)    //method=get
+  {
+	  $curl = curl_init();
+	  curl_setopt($curl, CURLOPT_URL, $url);
+	  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+	  curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+	  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	  $data = curl_exec($curl);
+	  if (curl_errno($curl)) {return 'ERROR '.curl_error($curl);}
+	  curl_close($curl);
+	  return $data;
+  }
+
+  2.2 指令下传
+  function post($MWID,$devicetype,$command){                                          
+  $url="http://www.cloudsensing.cn:9071/WIFPa/extension";        //WoT平台的接口
+  $MWID="000100006d735650";                                      //网关id
+  $content=$devicetype."#".$command;                             //设备id#指令id ，比如 $content="camera#on";
+  $time=date("H:i:s",time());
+    
+  
+   
+  $data="  <Extension>                                            //数据的封装格式
+              <Target>$MWID</Target>    
+              <Type>command</Type>                                //标记之间的数据是自己定义的
+              <Content>$content</Content>
+              <Time>$time</Time>
+           </Extension>";
+
+
+  $ch = curl_init();
+  $header[] = "Content-type: text/xml";//定义content-type为xml
+  curl_setopt($ch, CURLOPT_URL, $url); //定义表单提交地址
+  curl_setopt($ch, CURLOPT_POST, 1);   //定义提交类型 1：POST ；0：GET
+  curl_setopt($ch, CURLOPT_HEADER, 1); //定义是否显示状态头 1：显示 ； 0：不显示
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);//定义请求类型
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);//定义是否直接输出返回流
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $data); //定义提交的数据，这里是XML文件
+  $output=curl_exec($ch);
+  curl_close($ch);//关闭
+  }
+
+
+
+
+
+  
